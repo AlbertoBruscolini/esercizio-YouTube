@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Nuovo video</h1>
+  <p class="muted">Canale: {{ canale['nome'] }}</p>
+  {% if error %}
+    <div class="error">{{ error }}</div>
+  {% endif %}
+  <form method="post">
+    <label for="titolo">Titolo</label>
+    <input id="titolo" name="titolo" required>
+
+    <label for="durata">Durata (secondi)</label>
+    <input id="durata" name="durata" type="number" min="1" required>
+
+    <label for="immagine">Immagine (URL o nome file)</label>
+    <input id="immagine" name="immagine">
+
+    <button type="submit">Salva</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ canale['nome'] }}</h1>
+  <p class="muted">Categoria: {{ canale['categoria'] }} - Iscritti: {{ canale['numero_iscritti'] }}</p>
+  <p><a href="{{ url_for('new_video', canale_id=canale['id']) }}">Nuovo video</a></p>
+  <ul>
+    {% for v in video %}
+      <li>
+        <strong>{{ v['titolo'] }}</strong>
+        <span class="muted">({{ v['durata'] }}s{% if v['immagine'] %}, {{ v['immagine'] }}{% endif %})</span>
+      </li>
+    {% else %}
+      <li>Nessun video per questo canale.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

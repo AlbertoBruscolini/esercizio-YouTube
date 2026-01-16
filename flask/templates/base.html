@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Canali e Video</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 24px; color: #222; }
+      header { margin-bottom: 16px; }
+      a { color: #1a5fb4; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .muted { color: #666; }
+      .error { color: #b00020; margin: 8px 0; }
+      form { margin: 16px 0; }
+      label { display: block; margin: 8px 0 4px; }
+      input { padding: 6px 8px; width: 280px; max-width: 100%; }
+      button { margin-top: 12px; padding: 6px 12px; }
+      ul { padding-left: 18px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="{{ url_for('list_canali') }}">Canali</a>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

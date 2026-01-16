@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Nuovo canale</h1>
+  {% if error %}
+    <div class="error">{{ error }}</div>
+  {% endif %}
+  <form method="post">
+    <label for="nome">Nome</label>
+    <input id="nome" name="nome" required>
+
+    <label for="numero_iscritti">Numero iscritti</label>
+    <input id="numero_iscritti" name="numero_iscritti" value="0" type="number" min="0">
+
+    <label for="categoria">Categoria</label>
+    <input id="categoria" name="categoria" required>
+
+    <button type="submit">Salva</button>
+  </form>
+{% endblock %}
